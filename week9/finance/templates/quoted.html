@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Quote
+{% endblock %}
+
+{% block main %}
+    <h1>Your quote can be found below.</h1>
+    <p>
+        A share of {{stockdata['name']}} {{stockdata['symbol']}} costs {{stockdata['price']}}.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Stock Name</th>
+                <th>Symbol</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{stockdata['name']}}</td>
+                <td>{{stockdata['symbol']}}</td>
+                <td>{{stockdata['price']}}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

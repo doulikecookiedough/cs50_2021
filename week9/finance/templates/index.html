@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CS50 Finance Home
+{% endblock %}
+
+{% block main %}
+    <h1>Welcome Back to CS50 Finance</h1>
+
+    <h5>Funds Overview</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Current Cash</th>
+                <th>Total Value of Portfolio</th>
+                <th>Grand Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- TODO: Loop through the transactions to display all transactions in this table -->
+            <tr>
+                <td>{{ cash }}</td>
+                <td>{{ portfoliototal }}</td>
+                <td>{{ grandtotal }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+    <h5>Portfolio Overview</h5>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>Quantity</th>
+                <th>Current Price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- TODO: Loop through the transactions to display all transactions in this table -->
+            {% for stock in stocks %}
+                <tr>
+                    <td>{{ stock.stock }}</td>
+                    <td>{{ stock.quantity }}</td>
+                    <td>{{ stock.price }}</td>
+                    <td>{{ stock.total }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
